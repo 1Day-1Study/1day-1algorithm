@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class class Boj10828 {
+class Boj10828 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
