@@ -1,46 +1,65 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Boj9012 {
 
-    public String check(String temp) {
+    public static String check(String temp) {
 
-        int left_parentheses=0;
-        int right_parentheses=0;
-        String VPS[]=temp.split("");
+        String sample = "";
+        int left_parentheses = 0;
+        int right_parentheses = 0;
+        String VPS[] = temp.split("");
         for (int i = 0; i < VPS.length; i++) {
 
-            if(VPS[i].equals("(")) {
-                left_parentheses++;
-            }
-            if(VPS[i].equals(")")) {
-                right_parentheses++;
+            if (VPS[0].equals(")") || VPS[VPS.length - 1].equals("(")) {
+                return "NO";
+            } else {
+                if (VPS[i].equals("(")) {
+                    left_parentheses++;
+                }
+                if (VPS[i].equals(")")) {
+                    right_parentheses++;
+                }
+
             }
         }
 
-        if(left_parentheses==right_parentheses) {
-            return "YES";
+        if (left_parentheses == right_parentheses) {
+            for (int i = 0; i < VPS.length; i++) {
+                for (int j = 1; j < VPS.length; j++) {
+                    if (VPS[i].equals("(") && VPS[j].equals(")")) {
+                        VPS[i] = "";
+                        VPS[j] = "";
+                    }
+                }
+                sample+=VPS[i];
+            }
+            if(sample.equals("")) {
+                return "YES";
+            } else {
+                return "NO";
+            }
         } else {
             return "NO";
         }
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Boj9012 boj9012 = new Boj9012();
-        System.out.print("입력 갯수 T:");
-        int i = Integer.parseInt(scanner.nextLine());
+        int number = Integer.parseInt(bf.readLine());
 
-        for (int j = 0; j < i; j++) {
-//            Scanner scanner1 = new Scanner(System.in);
-            String VPS=scanner.nextLine();
-            String result=boj9012.check(VPS);
-            System.out.println(result);
+        for (int j = 0; j < number; j++) {
+            String VPS=bf.readLine();
+            String result=check(VPS);
+            bw.write(result);
+            bw.write("\n");
 
         }
-
+        bw.flush();
+        bw.close();
 
     }
 }
