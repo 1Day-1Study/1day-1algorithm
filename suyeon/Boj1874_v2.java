@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Bob1874_v2 {
+public class Boj1874_v2 {
 
     public static void main(String args[]) throws IOException {
 
