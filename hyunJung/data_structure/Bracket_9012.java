@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class bracket_9012 {
+public class Bracket_9012 {
 	/*
 	 *  the number of '(' == the number of ')'
 	 *  count up, '('
