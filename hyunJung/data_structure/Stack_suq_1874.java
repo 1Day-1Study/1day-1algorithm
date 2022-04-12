@@ -9,7 +9,7 @@ import java.util.Stack;
  * 
  *
  */
-public class Stack_suq {
+public class Stack_suq_1874 {
 			
 	public static void main(String[] args) throws IOException {
 		
