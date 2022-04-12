@@ -3,53 +3,55 @@ package suyeon;
 import java.io.*;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class Boj10845 {
-     public static void main(String args[]) throws IOException {
-
-          Scanner scan = new Scanner(System.in);
-          Queue<Integer> que = new LinkedList();
+     public static void main(String args[]) throws IOException, Exception {
+          BufferedReader br =  new BufferedReader(new InputStreamReader(System.in));
+          StringBuilder sb = new StringBuilder();
+          Queue<Integer> que = new LinkedList<Integer>();
 
           //입력받을 테스트 수
-          int testCaseCount = scan.nextInt();
+          int testCaseCount = Integer.parseInt(br.readLine());
           //큐에 담을 숫자
           int num = 0;
 
           while (testCaseCount --> 0) {
 
                //공백으로 구분해준다.
-               //String[] input = br.readLine().split(" ");
-               String command = scan.next();
+               String[] command = br.readLine().split(" ");
+               //String cmd = br.readLine();
 
-               switch (command){
+
+               switch (command[0]){
                     case "push":
-                         num = scan.nextInt();
+                         //num = Integer.parseInt(br.readLine());
+                         num = Integer.parseInt(command[1]);
                          que.add(num);
                          break;
 
                     case "pop":
-                         System.out.println(que.isEmpty()? -1 : que.poll());
+                         sb.append(que.isEmpty()?-1:que.poll()).append("\n");
                          break;
 
                     case "size":
-                         System.out.println(que.size());
+                         sb.append(que.size()).append("\n");
                          break;
 
                     case "empty":
-                         System.out.println(que.isEmpty()? 1 : 0);
+                         sb.append(que.isEmpty()?1:0).append("\n");
+                         //System.out.println(que.toString());
                          break;
 
                     case "front":
-                         System.out.println(que.isEmpty()? -1 : que.peek());
+                         sb.append(que.isEmpty()?-1:que.peek()).append("\n");
                          break;
 
                     case "back":
-                         System.out.println(que.isEmpty()? -1 : num);
+                         sb.append(que.isEmpty()?-1:num).append("\n");
                          break;
 
                }
           }
-
+          System.out.println(sb);
      }
 }
