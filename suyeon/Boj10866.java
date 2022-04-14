@@ -9,7 +9,9 @@ import java.util.Queue;
 
 //백준 10866 덱
 public class Boj10866 {
-    public static  void main(String args) throws IOException{
+
+    public static void main(String args[]) throws IOException{
+
         BufferedReader br =  new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         Deque<Integer> deque = new LinkedList<Integer>();
@@ -17,36 +19,49 @@ public class Boj10866 {
         int testCaseCount = Integer.parseInt(br.readLine());
 
         while(testCaseCount --> 0){
+
             String[] input = br.readLine().split(" ");
-            int num = Integer.parseInt(input[1]);
+
 
             switch(input[0]){
-
                 case "push_front":
-                    deque.addFirst(num);
+                    deque.addFirst(Integer.parseInt(input[1]));
+                    //System.out.println(deque.toString());
+                    break;
+
+                case "push_back":
+                    deque.addLast(Integer.parseInt(input[1]));
+                    //System.out.println(deque.toString());
                     break;
 
                 case "pop_front":
                     sb.append(deque.isEmpty()? -1 : deque.pollFirst()).append("\n");
+                    //System.out.println(deque.isEmpty()? -1 : deque.pollFirst());
                     break;
+
                 case "pop_back":
                     sb.append(deque.isEmpty()? -1 : deque.pollLast()).append("\n");
+                    //System.out.println(deque.isEmpty()? -1 : deque.pollLast());
                     break;
 
                 case "size":
                     sb.append(deque.size()).append("\n");
+                    //System.out.println(deque.size());
                     break;
 
                 case "empty":
                     sb.append(deque.isEmpty()? 1 : 0).append("\n");
+                    //System.out.println(deque.isEmpty()? 1 : 0);
                     break;
 
                 case "front":
                     sb.append(deque.isEmpty()? -1 : deque.getFirst()).append("\n");
+                    //System.out.println(deque.isEmpty()? -1 : deque.getFirst());
                     break;
 
                 case "back":
                     sb.append(deque.isEmpty()? -1 : deque.getLast()).append("\n");
+                    //System.out.println(deque.isEmpty()? -1 : deque.getLast());
                     break;
             }
         }
