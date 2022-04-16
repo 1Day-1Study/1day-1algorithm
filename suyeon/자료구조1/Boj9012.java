@@ -1,4 +1,4 @@
-package suyeon;
+package suyeon.자료구조1;
 
 import java.io.*;
 import java.util.Stack;
@@ -37,8 +37,6 @@ public class Boj9012 {
 
         if(stack.empty()) return "YES";
         else return "NO";
-
-
 
      }
 

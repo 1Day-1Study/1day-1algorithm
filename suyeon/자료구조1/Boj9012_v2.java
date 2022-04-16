@@ -1,9 +1,8 @@
-package suyeon;
+package suyeon.자료구조1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack;
 
 //백준 9012 괄호
 public class Boj9012_v2 {

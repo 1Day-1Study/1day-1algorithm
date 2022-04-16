@@ -1,4 +1,4 @@
-package suyeon;
+package suyeon.자료구조1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,6 +33,7 @@ public class Boj1874_v2 {
                 System.out.println("NO");
                 return;
             }
+            //stack.insertElement()
 
             stack.pop();
             sb.append("-").append("\n");
