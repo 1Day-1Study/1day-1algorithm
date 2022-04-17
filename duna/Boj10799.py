@@ -10,11 +10,11 @@ for i in range(len(str)-1):
     result+=stick
     #print("stick=",stick, "result=",result)
     
-  elif str[i]==')' and str[i+1]==')': #막대 왼쪽 마지막 부분
+  elif str[i]==')' and str[i+1]==')': #막대 오른쪽 마지막 부분
     stick-=1
     #print("stick=",stick, "result=",result)
     
-  elif str[i]=='(' and str[i+1]=='(': #막대 오른쪽 마지막 부분
+  elif str[i]=='(' and str[i+1]=='(': #막대 왼쪽 마지막 부분
     stick+=1
     result+=1
     #print("stick=",stick, "result=",result)
