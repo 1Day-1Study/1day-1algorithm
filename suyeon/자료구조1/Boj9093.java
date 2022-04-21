@@ -1,4 +1,4 @@
-package suyeon;
+package suyeon.자료구조1;
 
 import java.io.*;
 import java.util.Stack;
