@@ -13,7 +13,7 @@ def GCD(x,y):
     x,y=y,x%y
   return x
 
-#최대 공배수
+#최소 공배수
 def LCM(x,y):
   result=(x*y)//GCD(x,y)
   return result
