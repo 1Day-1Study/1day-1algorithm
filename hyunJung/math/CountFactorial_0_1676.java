@@ -11,12 +11,15 @@ public class CountFactorial_0_1676 {
 		
 		int N = Integer.parseInt(br.readLine());
 		
-		int factorial = getFactorial(N);
+		int cnt = 0;
 		
+		while(N >= 5) {
+			cnt += N/5;
+			System.out.println("count > > > "+cnt);
+			N /= 5;
+			System.out.println("N ? ? ? "+N);
+		}
+		System.out.println(cnt);
 	}
 	
-	static int getFactorial(int N) {
-		if(N <= 1) return 1;
-		return N * getFactorial(N-1);
-	}
 }
