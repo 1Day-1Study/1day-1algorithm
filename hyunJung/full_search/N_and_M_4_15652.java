@@ -1,4 +1,4 @@
-package dataStructure;
+package full_search;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,8 +41,8 @@ public class N_and_M_4_15652 {
 		
 		
 		if(depth == M) { // M개 선택 완료
-			for(int num : selected) {
-				answer.append(num).append(' ');
+			for(int i = 0; i < M; i++) {
+				answer.append(selected[i]).append(' ');
 			}
 			answer.append("\n");
 			System.out.println(cnt++ +" 회차 선택완료 ---> \n"+answer);
