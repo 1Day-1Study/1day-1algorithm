@@ -22,6 +22,7 @@ public class GCDLCM_2609 {
 	}
 	//유클리드 호제법 gcd(a,b) = gcd(b,r)
 	public static int gcd(int num1, int num2) {
+		
 		while(num2 !=0) {
 			int remain = num1 % num2;
 			
