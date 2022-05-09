@@ -19,7 +19,8 @@ public class N_and_M_4_15652 {
 
 		// 재귀호출
 		selectNumber(1, 0);
-//		System.out.println(answer);
+		System.out.println("- - - - - - - - - - - - - -");
+		System.out.println(answer);
 
 	}
 
@@ -30,17 +31,16 @@ public class N_and_M_4_15652 {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 
-		// N개의 배열 생성
-		selected = new int[N+1];
+		// M개의 배열 생성 -> 숫자 바구니
+		selected = new int[M];
 	}
 
 	static void selectNumber(int K, int depth) {
 		System.out.println("selectNumber 호출 ---> "+K+", "+depth);
 
-
 		if(depth == M) { // M개 선택 완료
-			for(int i = 0; i < M; i++) {
-				answer.append(selected[i]).append(' ');
+			for(int val : selected) {
+				answer.append(val).append(' ');
 			}
 			answer.append("\n");
 			System.out.println(cnt++ +" 회차 선택완료 ---> \n"+answer);
@@ -49,8 +49,6 @@ public class N_and_M_4_15652 {
 
 		for(int i = K; i <= N; i++) {
 			selected[depth] = i;
-			System.out.println("selected number ---> "+selected[i]);
-			System.out.println("i and depth+1 ? ? ? "+i+", "+(depth+1));
 			selectNumber(i, depth+1);
 		}
 	}
