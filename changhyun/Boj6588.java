@@ -48,6 +48,7 @@ public class Boj6588 {
                     break;
                 }
             }
+
             if (!flag) {
                 sb.append("Goldbach's conjecture is wrong.");
             }
