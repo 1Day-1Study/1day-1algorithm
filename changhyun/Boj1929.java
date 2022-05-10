@@ -18,9 +18,11 @@ public class Boj1929 {
 
         // 2부터 N까지 소수구하기
         for (int i = 2; i <= Math.sqrt(N); i++) {
+
             if (isNotPrime[i]) {
                 continue;
             }
+
             for (int j = i*i; j <= N ; j+=i) {
                 isNotPrime[j] = true;
             }
