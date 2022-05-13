@@ -3,6 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/*
+ * 예시를 보면 i+1번째 선택한 수는 i번째 선택한 수보다 클 수가 없음.
+ * e.g) i = 1 -> i+n = 2, 3, 4
+ */
 public class N_and_M_2_15650 {
 	static int N, M;
 	
