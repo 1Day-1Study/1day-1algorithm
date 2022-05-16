@@ -1,3 +1,5 @@
+package 백준문제;
+
 import java.io.*;
 import java.util.StringTokenizer;
 

@@ -1,3 +1,5 @@
+package 백준문제;
+
 import java.io.*;
 
 class Boj9093 {
