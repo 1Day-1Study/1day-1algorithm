@@ -14,4 +14,4 @@ for l in look:
 answer.sort()  #사전순 정렬
 print(cnt)  #총 개수
 for a in answer:
-  print(a)  #듣보잡 수
+  print(a)  #듣보잡
