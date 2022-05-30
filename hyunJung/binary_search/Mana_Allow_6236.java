@@ -1,10 +1,13 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Mana_Allow_6236 {
+
+	static int N, M;
+	static int max;
+	static int[] spend;
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -12,17 +15,49 @@ public class Mana_Allow_6236 {
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 		
-		int[] money = new int[N];
-		st = new StringTokenizer(br.readLine(), "\n");
+		max = 0;
+		spend = new int[N];
+		
 		for(int i=0; i<N; i++) {
-			money[i] = Integer.parseInt(st.nextToken());
+			spend[i] = Integer.parseInt(br.readLine());
+			max = Math.max(max, spend[i]);
 		}
 		
-		Arrays.sort(money);
+		int left = max;
+		int right = 1000000000;
+		int ans = 0;
 		
+		while(left <= right) {
+			int mid = (left + right) / 2 ;
+			
+			if(withdraw(mid)) {
+				ans = mid;
+				right = mid -1;
+			}else {
+				left = mid + 1;
+			}
+		}
+		
+		System.out.println(ans);
 	}
-
+	
+	static boolean withdraw(int mid) {
+		int count = 1;
+		int sum = 0;
+		
+		for(int i =0; i < N; i++) {
+			if(sum + spend[i] > mid) {
+				count ++;
+				sum = spend[i];
+			}else {
+				sum += spend[i];
+			}
+			
+			sum -= spend[i];
+		}
+		return count <= M;
+	}
 }
