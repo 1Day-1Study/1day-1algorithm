@@ -8,7 +8,7 @@ public class Sum_Numbers_3273 {
 	
 	static int n, x;
 	static int[] nums;
-		
+	
 	static void input() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -17,10 +17,10 @@ public class Sum_Numbers_3273 {
 		nums = new int[n+1];
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		for(int i=0; i<n; i++) {
+		for(int i=1; i<=n; i++) {
 			nums[i] = Integer.parseInt(st.nextToken());
 		}
-		Arrays.sort(nums);
+		Arrays.sort(nums, 1, n+1);
 		
 		x = Integer.parseInt(br.readLine());
 		
@@ -28,19 +28,13 @@ public class Sum_Numbers_3273 {
 	}
 	
 	static void two_pointer() {
-		// x = target > ans ++
-		// sum > target - right --
-		// sum <= target - left ++
-		int left = 0, right = n, ans = 0;
+		int left = 1, right = n, ans = 0;
 		
 		while(left < right) {
 			if(nums[left] + nums[right] == x) ans++;
 			
-			if(nums[left] + nums[right] >= x) {
-				right--;
-			}else {
-				left++;
-			}
+			if(nums[left] + nums[right] >= x) right--;
+			else left++;
 		}
 		
 		System.out.println(ans);
@@ -50,4 +44,5 @@ public class Sum_Numbers_3273 {
 		input();
 		two_pointer();
 	}
+	
 }
