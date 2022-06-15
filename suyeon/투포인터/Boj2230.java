@@ -28,6 +28,7 @@ public class Boj2230 {
         int low=0, high = 0, result = Integer.MAX_VALUE;
 
         while(high < N) {
+
             if(arr[high] - arr[low] < M) {
                 high++;
                 continue;
@@ -37,7 +38,6 @@ public class Boj2230 {
                 result = M;
                 break;
             }
-
             result = Math.min(result, (arr[high] - arr[low]));
             low++;
         }
