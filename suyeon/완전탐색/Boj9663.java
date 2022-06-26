@@ -20,18 +20,16 @@ public class Boj9663 {
         // 1 열부터 N열까지 돌면서 각 1행 N열에 퀸을 놓았을때 가능한 경우를 확인한다.
         dfs(0);
 
-
         System.out.println(count);
     }
     // row 행까지는 퀸을 놓았다.
-    // row+1행에 퀸을 놓을수 있는지 확인한다.
     // 만약 row 값이 N 과 같다면 N 행까지 퀸을 놓았다는 말이므로 count를 1 증가시켜준다.
     public static void dfs( int row) {
         if(row == N) {//column을 다 채웠으면 퀸 배치가 끝났으니까 count+1
             count++;
             return;
         }
-        // 1열 부터 N 열까지 반복하면서 (row+1, i)에 퀸을 놓을 수 있는경우가 있는지 확인한다.
+        // 1열 부터 N 열까지 반복하면서 (row)에 퀸을 놓을 수 있는경우가 있는지 확인한다.
         // 있으면 다음행의 dfs를 호출한다.
         for(int i = 0; i < N; i++) { //퀸을 0번부터 N-1번까지 놓는 경우를 전부 따져본다.
                 col[row] = i;//퀸을 i행에 놓는다.
