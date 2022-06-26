@@ -26,7 +26,6 @@ public class Boj1015 {
         }
 
 
-
         public static void main(String[] args) throws IOException {
             input();
             sort();
