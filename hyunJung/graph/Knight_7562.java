@@ -42,7 +42,7 @@ public class Knight_7562 {
 		
 		// get locations
 		while(T_Case-- > 0) {
-			// 체스판 크기
+			// size of chessboard
 			int I = Integer.parseInt(br.readLine());
 			int[][] plate = new int[I][I];
 			

@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-/*
+/* 
+ * 백준 1389 
  * Floyd Warshall algorithm
  * ref >>> https://blog.naver.com/ndb796/221234427842
  */
@@ -37,14 +38,14 @@ public class Kevin_1389 {
 			}
 		}
 		
-		// 양방향 간선
+		// both-way line
 		for(int i=0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
 			
-			network[x][y] = network[y][x] = 1; // 관계가 있으면 1
+			network[x][y] = network[y][x] = 1; // connection = 1
 		}
 		
 		// F-W algorithm
@@ -60,8 +61,9 @@ public class Kevin_1389 {
 		}
 		
 		int res = INF;
-		int idx = -1;
+		int idx = -1; // ?
 		
+		// find the answer 
 		for(int i=1; i<=N; i++) {
 			int total = 0;
 			
