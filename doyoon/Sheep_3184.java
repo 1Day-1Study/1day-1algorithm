@@ -64,7 +64,7 @@ public class Sheep_3184 {
 			for (int i = 0; i < 4; i++) {
 				int nx = now[0] + dx[i];
 				int ny = now[1] + dy[i];
-
+					//범위를 벗어났느냐 or 방문했느냐 or 울타리에 있느냐 
 				if (!isRange(nx, ny) || visited[nx][ny] || yard[nx][ny] == '#')
 					continue;
 
