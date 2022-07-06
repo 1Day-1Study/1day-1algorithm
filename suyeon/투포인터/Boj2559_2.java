@@ -15,13 +15,13 @@ public class Boj2559_2 {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             StringTokenizer st = new StringTokenizer(br.readLine());
-            n = Integer.parseInt(st.nextToken());
-            k = Integer.parseInt(st.nextToken());
-            arr = new int[n];
+            n = Integer.parseInt(st.nextToken()); //온도 갯수
+            k = Integer.parseInt(st.nextToken()); //온도 차이
+            arr = new int[n]; //온도들을 담을배열
 
             st = new StringTokenizer(br.readLine());
             for(int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
+                arr[i] = Integer.parseInt(st.nextToken()); //n개의 온도를 입력받는다.
             }
 
             System.out.println(slidingWindow());
