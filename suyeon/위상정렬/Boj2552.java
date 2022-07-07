@@ -18,9 +18,8 @@ public class Boj2552 {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        //1부터 시작한다고 생각
-        degree = new int[n + 1];
-        list = new ArrayList[n + 1];
+        degree = new int[n + 1]; //진입차수(자신을 향하는 화살표)
+        list = new ArrayList[n + 1]; //연결리스트
 
         //그래프 정점별로 연결된 정점을 기록할 리스트 초기화
         for (int i = 1; i < n + 1; i++) {
@@ -64,7 +63,6 @@ public class Boj2552 {
                     queue.add(next);
                 }
             }
-
         }
 
     }
