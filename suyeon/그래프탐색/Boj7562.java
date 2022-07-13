@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Boj4803_2 {
+public class Boj7562 {
     private static final int[] xDiff = {1,2,2,1,-1,-2,-2,-1}; // 시계방향으로 나이트가 이동할 수 있는 x값
     private static final int[] yDiff = {2,1,-1,-2,-2,-1,1,2}; // 시계방향으로 나이트가 이동할 수 있는 y값
     private static int n, m; // 한 변의 길이, 적의 수
