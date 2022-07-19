@@ -15,18 +15,21 @@ public class Boj14267 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        
+        int n = Integer.parseInt(st.nextToken()); //직원수
+        int m = Integer.parseInt(st.nextToken()); //최소 칭찬 횟수
 
         list = new ArrayList[n+1];
+        //직원 수 만큼 인접리스트를 만들어준다.
         for(int i=1; i<n+1; i++) {
             list[i] = new ArrayList<>();
         }
 
         st = new StringTokenizer(br.readLine());
         for(int a=1; a<n+1; a++) {
+            //직속상사의 번호
             int b = Integer.parseInt(st.nextToken());
+            //상사가 없는 경우 (사장은 1번)
             if(b!=-1) {
                 list[b].add(a);
             }
@@ -35,9 +38,11 @@ public class Boj14267 {
         compliment = new int[n+1];
         for(int i=0; i<m; i++) {
             st = new StringTokenizer(br.readLine());
+            //직속상사로부터 칭찬을 받은 직원번호
             int employee = Integer.parseInt(st.nextToken());
-            int c = Integer.parseInt(st.nextToken());
-            compliment[employee] += c; //칭찬받은 모든 데이터를 배열에 저장한다.
+            //칭찬 수치
+            int w = Integer.parseInt(st.nextToken());
+            compliment[employee] += w; //칭찬받은 모든 데이터를 배열에 저장한다.
 
         }
         dfs(1);
